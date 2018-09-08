@@ -28,15 +28,23 @@ pthread_t threads[];
 int values[999];
 int reads[999][999];
 
+
+int is_all_read(int line) {
+    for (int i = 0; i < CONSUMERS; i++) {
+        if (reads[line][i] == FALSE) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
 int is_done() {
     for (int producer = 0; producer < PRODUCERS; producer++) {
         if (values[producer] != MESSAGES) {
             return FALSE;
         }
-        for (int consumer = 0; consumer < CONSUMERS; consumer++) {
-            if (reads[producer][consumer] == FALSE) {
-                return FALSE;
-            }
+        if (is_all_read(producer) == FALSE) {
+            return FALSE;
         }
     }
     return TRUE;
@@ -48,24 +56,14 @@ void set_not_reads(int line) {
     }
 }
 
-int is_all_read(int line) {
-    for (int i = 0; i < CONSUMERS; i++) {
-        if (reads[line][i] == FALSE) {
-            return FALSE;
-        }
-    }
-    return TRUE;
-}
-
 void *write(int me) {
     for (int i = 1; i <= MESSAGES; i++) {
         while (is_all_read(me) == FALSE) {}
         sem_wait(&semaphores[me]);
         printf("P%d - Produzindo...\n", me);
-        values[me] = i;
         set_not_reads(me);
+        values[me] = i;
         printf("P%d - Produzido: %d\n", me, values[me]);
-        sleep(1);
         sem_post(&semaphores[me]);
     }
  }
