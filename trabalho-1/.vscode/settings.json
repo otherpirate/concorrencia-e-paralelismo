@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "pthread.h": "c",
+        "istream": "c",
+        "ostream": "c",
+        "stdio.h": "c",
+        "iterator": "c",
+        "string": "c",
+        "vector": "c",
+        "__locale": "c"
+    },
+    "python.linting.pylintEnabled": false
+}

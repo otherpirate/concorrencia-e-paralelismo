@@ -1,0 +1,62 @@
+mpirun -np 2 main 0 1 0
+Time-around-quad (0): 30.249898
+Time-around-quad (1): 105.836906
+Time-total (1): 105.872472
+Result: 2.13452500946141343618
+Time-total (0): 105.876551
+mpirun -np 4 main 0 1 0
+Time-around-quad (0): 9.405364
+Time-around-quad (1): 21.644110
+Time-total (1): 21.716971
+Time-around-quad (2): 42.872361
+Time-total (2): 42.932216
+Time-around-quad (3): 55.985185
+Time-total (3): 56.039662
+Result: 2.13452500946141343618
+Time-total (0): 56.054301
+mpirun -np 4 main 0 1 0
+Time-around-quad (0): 8.939027
+Time-around-quad (1): 21.816975
+Time-total (1): 21.899439
+Time-around-quad (2): 42.038699
+Time-total (2): 42.116164
+Time-around-quad (3): 56.394168
+Time-total (3): 56.466344
+Result: 2.13452500946141343618
+Time-total (0): 56.480418
+mpirun -np 8 main 0 1 0
+Time-around-quad (0): 6.318828
+Time-around-quad (1): 10.637191
+Time-total (1): 10.827765
+Time-around-quad (2): 16.426145
+Time-around-quad (3): 21.003736
+Time-total (3): 21.199305
+Time-total (2): 21.205599
+Time-around-quad (4): 29.072004
+Time-around-quad (6): 34.396917
+Time-around-quad (5): 34.412443
+Time-total (5): 34.554640
+Time-around-quad (7): 43.708560
+Time-total (7): 43.825743
+Time-total (6): 43.835803
+Time-total (4): 43.871054
+Result: 2.13452500946141343618
+Time-total (0): 43.893807
+mpirun -np 8 main 0 1 0
+Time-around-quad (0): 6.462288
+Time-around-quad (1): 11.320086
+Time-total (1): 11.530247
+Time-around-quad (2): 17.950621
+Time-around-quad (3): 23.705683
+Time-total (3): 23.881785
+Time-total (2): 23.891244
+Time-around-quad (4): 32.580727
+Time-around-quad (6): 37.877357
+Time-around-quad (5): 37.885806
+Time-total (5): 38.044537
+Time-around-quad (7): 47.743890
+Time-total (7): 47.862514
+Time-total (6): 47.882204
+Time-total (4): 47.912529
+Result: 2.13452500946141343618
+Time-total (0): 47.942950
